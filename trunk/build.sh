@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd mysql-5.7.41
+cd mysql-8.0.32
 
 mkdir -p build
 cd build
