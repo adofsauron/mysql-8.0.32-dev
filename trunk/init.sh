@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+mkdir -p /var/log/mysql
+
+chown -R mysql:mysql /var/log/mysql
+
 rm /usr/local/share/mysql/data -rf
 
 mkdir -p /usr/local/share/mysql/data 
