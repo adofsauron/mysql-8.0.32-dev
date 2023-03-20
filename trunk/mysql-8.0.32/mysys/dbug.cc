@@ -1888,10 +1888,17 @@ static void DoPrefix(CODE_STATE *cs, uint _line_) {
   }
   if (cs->stack->flags & PROCESS_ON)
     (void)fprintf(cs->stack->out_file, "%s: ", cs->process);
+
+	#if 0
   if (cs->stack->flags & FILE_ON)
     (void)fprintf(cs->stack->out_file, "%14s: ", BaseName(cs->file));
   if (_line_ != 0 && (cs->stack->flags & LINE_ON))
     (void)fprintf(cs->stack->out_file, "%5d: ", _line_);
+	#endif
+
+	(void)fprintf(cs->stack->out_file, "%24s: ", BaseName(cs->file));
+  (void)fprintf(cs->stack->out_file, "%5d: ", _line_);
+
   if (cs->stack->flags & DEPTH_ON)
     (void)fprintf(cs->stack->out_file, "%4d: ", cs->level);
 }
