@@ -1897,10 +1897,10 @@ static void DoPrefix(CODE_STATE *cs, uint _line_) {
 	#endif
 
 	(void)fprintf(cs->stack->out_file, "%24s: ", BaseName(cs->file));
-  (void)fprintf(cs->stack->out_file, "%5d: ", _line_);
+  (void)fprintf(cs->stack->out_file, "%7d: ", _line_);
 
   if (cs->stack->flags & DEPTH_ON)
-    (void)fprintf(cs->stack->out_file, "%4d: ", cs->level);
+    (void)fprintf(cs->stack->out_file, "%5d: ", cs->level);
 }
 
 /*
