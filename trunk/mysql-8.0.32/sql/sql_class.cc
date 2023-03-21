@@ -1832,7 +1832,7 @@ void THD::cleanup_after_query() {
 bool THD::convert_string(LEX_STRING *to, const CHARSET_INFO *to_cs,
                          const char *from, size_t from_length,
                          const CHARSET_INFO *from_cs, bool report_error) {
-  DBUG_TRACE;
+  // DBUG_TRACE;
   size_t new_length = to_cs->mbmaxlen * from_length;
   if (!(to->str = (char *)alloc(new_length + 1))) {
     to->length = 0;  // Safety fix

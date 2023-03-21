@@ -5897,6 +5897,7 @@ Table_ref *Query_block::add_table_to_list(
       nullptr; /* The table preceding the current one. */
   LEX *lex = thd->lex;
   DBUG_TRACE;
+  DBUG_PRINT("enter", ("table_name: %s", table_name->table.str));
 
   assert(table_name != nullptr);
   // A derived table has no table name, only an alias.
@@ -6265,6 +6266,7 @@ Table_ref *Query_block::nest_last_join(THD *thd, size_t table_cnt) {
 
 bool Query_block::add_joined_table(Table_ref *table) {
   DBUG_TRACE;
+  DBUG_PRINT("enter", ("table_name: %s", table->table_name));
   m_current_table_nest->push_front(table);
   table->join_list = m_current_table_nest;
   table->embedding = embedding;
