@@ -1,5 +1,7 @@
 #!/bin/bash
 
+groupadd mysql
+useradd -g mysql mysql
 
 mkdir -p /var/log/mysql
 
